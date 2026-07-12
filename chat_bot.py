@@ -46,8 +46,7 @@ def build_qa_chain(vector_store_path="faiss_index"):
     retriever = vector_store.as_retriever()
     # Load QA chain for combining documents
     llm = ChatGroq(
-        #api_key=st.secrets["GROQ_API_KEY"],
-        api_key="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",
+        api_key=st.secrets["GROQ_API_KEY"],
         model="llama-3.3-70b-versatile"
     )
     qa_chain = load_qa_chain(llm, chain_type="stuff")
